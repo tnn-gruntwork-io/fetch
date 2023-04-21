@@ -38,8 +38,8 @@ func TestDownloadGitTagZipFile(t *testing.T) {
 		gitTag      string
 		githubToken string
 	}{
-		{publicGitHub, "gruntwork-io", "fetch-test-public", "v0.0.1", ""},
-		{publicGitHub, "gruntwork-io", "fetch-test-private", "v0.0.2", os.Getenv("GITHUB_OAUTH_TOKEN")},
+		{publicGitHub, "tnn-gruntwork-io", "fetch-test-public", "v0.0.1", ""},
+		{publicGitHub, "tnn-gruntwork-io", "fetch-test-private", "v0.0.2", os.Getenv("GITHUB_OAUTH_TOKEN")},
 		{enterpriseGitHubExample, "temp-internal-org", "bash-commons", "v0.0.4", os.Getenv("GITHUB_OAUTH_TOKEN")},
 	}
 
@@ -114,8 +114,8 @@ func TestDownloadGitBranchZipFile(t *testing.T) {
 		branchName  string
 		githubToken string
 	}{
-		{publicGitHub, "gruntwork-io", "fetch-test-public", "sample-branch", ""},
-		{publicGitHub, "gruntwork-io", "fetch-test-private", "sample-branch", os.Getenv("GITHUB_OAUTH_TOKEN")},
+		{publicGitHub, "tnn-gruntwork-io", "fetch-test-public", "sample-branch", ""},
+		{publicGitHub, "tnn-gruntwork-io", "fetch-test-private", "sample-branch", os.Getenv("GITHUB_OAUTH_TOKEN")},
 	}
 
 	for _, tc := range cases {
@@ -165,7 +165,7 @@ func TestDownloadBadGitBranchZipFile(t *testing.T) {
 		branchName  string
 		githubToken string
 	}{
-		{publicGitHub, "gruntwork-io", "fetch-test-public", "branch-that-doesnt-exist", ""},
+		{publicGitHub, "tnn-gruntwork-io", "fetch-test-public", "branch-that-doesnt-exist", ""},
 	}
 
 	for _, tc := range cases {
@@ -211,10 +211,10 @@ func TestDownloadGitCommitFile(t *testing.T) {
 		commitSha   string
 		githubToken string
 	}{
-		{publicGitHub, "gruntwork-io", "fetch-test-public", "d2de34edb4c6564e0674b3f390b3b1fb0468183a", ""},
-		{publicGitHub, "gruntwork-io", "fetch-test-public", "57752e7f1df0acbd3c1e61545d5c4d0e87699d84", ""},
-		{publicGitHub, "gruntwork-io", "fetch-test-public", "f32a08313e30f116a1f5617b8b68c11f1c1dbb61", ""},
-		{publicGitHub, "gruntwork-io", "fetch-test-private", "676cfb92b54d33538c756c7a9479bfc3f6b44de2", os.Getenv("GITHUB_OAUTH_TOKEN")},
+		{publicGitHub, "tnn-gruntwork-io", "fetch-test-public", "d2de34edb4c6564e0674b3f390b3b1fb0468183a", ""},
+		{publicGitHub, "tnn-gruntwork-io", "fetch-test-public", "57752e7f1df0acbd3c1e61545d5c4d0e87699d84", ""},
+		{publicGitHub, "tnn-gruntwork-io", "fetch-test-public", "f32a08313e30f116a1f5617b8b68c11f1c1dbb61", ""},
+		{publicGitHub, "tnn-gruntwork-io", "fetch-test-private", "676cfb92b54d33538c756c7a9479bfc3f6b44de2", os.Getenv("GITHUB_OAUTH_TOKEN")},
 	}
 
 	for _, tc := range cases {
@@ -264,12 +264,12 @@ func TestDownloadBadGitCommitFile(t *testing.T) {
 		commitSha   string
 		githubToken string
 	}{
-		{publicGitHub, "gruntwork-io", "fetch-test-public", "hello-world", ""},
-		{publicGitHub, "gruntwork-io", "fetch-test-public", "i-am-a-non-existent-commit", ""},
+		{publicGitHub, "tnn-gruntwork-io", "fetch-test-public", "hello-world", ""},
+		{publicGitHub, "tnn-gruntwork-io", "fetch-test-public", "i-am-a-non-existent-commit", ""},
 		// remove a single letter from the beginning of an otherwise legit commit sha
 		// interestingly, through testing I found that GitHub will attempt to find the right commit sha if you
 		// truncate the end of it.
-		{publicGitHub, "gruntwork-io", "fetch-test-public", "7752e7f1df0acbd3c1e61545d5c4d0e87699d84", ""},
+		{publicGitHub, "tnn-gruntwork-io", "fetch-test-public", "7752e7f1df0acbd3c1e61545d5c4d0e87699d84", ""},
 	}
 
 	for _, tc := range cases {
@@ -315,7 +315,7 @@ func TestDownloadZipFileWithBadRepoValues(t *testing.T) {
 		gitTag      string
 		githubToken string
 	}{
-		{publicGitHub, "https://github.com/gruntwork-io/fetch-test-public/archive/does-not-exist.zip", "MyNameIsWhat", "x.y.z", ""},
+		{publicGitHub, "https://github.com/tnn-gruntwork-io/fetch-test-public/archive/does-not-exist.zip", "MyNameIsWhat", "x.y.z", ""},
 	}
 
 	for _, tc := range cases {

@@ -49,11 +49,11 @@ See more examples in the [Examples section](#examples).
 
 ### Download from releases page
 
-Download the fetch binary from the [GitHub Releases](https://github.com/gruntwork-io/fetch/releases) tab.
+Download the fetch binary from the [GitHub Releases](https://github.com/tnn-gruntwork-io/fetch/releases) tab.
 
 ### Install via package manager
 
-Note that package managers are third party. The third party fetch packages may not be updated with the latest version, but are often close. Please check your version against the latest available on the [releases page](https://github.com/gruntwork-io/fetch/releases). If you want the latest version, the recommended installation option is to [download from the releases page](https://github.com/gruntwork-io/fetch/releases).
+Note that package managers are third party. The third party fetch packages may not be updated with the latest version, but are often close. Please check your version against the latest available on the [releases page](https://github.com/tnn-gruntwork-io/fetch/releases). If you want the latest version, the recommended installation option is to [download from the releases page](https://github.com/tnn-gruntwork-io/fetch/releases).
 
 - **macOS:** You can install fetch using [Homebrew](https://brew.sh/): `brew install fetch`. 
 
@@ -185,7 +185,7 @@ fetch --repo="https://ghe.mycompany.com/foo/bar" --ref="0.1.5" --release-asset="
 
 ##### Release Instructions
 
-To release a new version of `fetch`, go to the [Releases page](https://github.com/gruntwork-io/fetch/releases) and "Draft a new release".
+To release a new version of `fetch`, go to the [Releases page](https://github.com/tnn-gruntwork-io/fetch/releases) and "Draft a new release".
 On the following page, bump the "Tag version" appropriately, and set the "Release title" to be the same.
 In the "Describe this release" section, log the changes of this release, linking back to issues that were addressed.
 Click the "Publish release" button. CircleCI will pick this up, generate the assets, and attach them to the release.

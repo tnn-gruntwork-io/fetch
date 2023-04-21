@@ -25,10 +25,10 @@ func TestGetListOfReleasesFromGitHubRepo(t *testing.T) {
 		testInst         GitHubInstance
 	}{
 		// Test on a public repo whose sole purpose is to be a test fixture for this tool
-		{"https://github.com/gruntwork-io/fetch-test-public", "v0.0.1", "v0.0.4", 4, "", testInst},
+		{"https://github.com/tnn-gruntwork-io/fetch-test-public", "v0.0.1", "v0.0.4", 4, "", testInst},
 
 		// Private repo equivalent
-		{"https://github.com/gruntwork-io/fetch-test-private", "v0.0.2", "v0.0.2", 1, os.Getenv("GITHUB_OAUTH_TOKEN"), testInst},
+		{"https://github.com/tnn-gruntwork-io/fetch-test-private", "v0.0.2", "v0.0.2", 1, os.Getenv("GITHUB_OAUTH_TOKEN"), testInst},
 	}
 
 	for _, tc := range cases {
@@ -133,17 +133,17 @@ func TestParseUrlIntoGithubInstance(t *testing.T) {
 		apiv         string
 		expectedInst GitHubInstance
 	}{
-		{"http://www.github.com/gruntwork-io/script-modules/", "", wwwGhTestInst},
-		{"https://www.github.com/gruntwork-io/script-modules/", "", wwwGhTestInst},
-		{"http://github.com/gruntwork-io/script-modules/", "", ghTestInst},
-		{"http://www.ghe.mycompany.com/gruntwork-io/script-modules", "v3", wwwGheTestInst},
-		{"https://www.ghe.mycompany.com/gruntwork-io/script-modules", "v3", wwwGheTestInst},
-		{"http://ghe.mycompany.com/gruntwork-io/script-modules", "v3", gheTestInst},
-		{"http://www.mycogithub.com/gruntwork-io/script-modules", "v3", wwwMyCoTestInst},
-		{"https://www.mycogithub.com/gruntwork-io/script-modules", "v3", wwwMyCoTestInst},
-		{"http://mycogithub.com/gruntwork-io/script-modules", "v3", myCoTestInst},
-		{"http://mycogithub.local/gruntwork-io/script-modules", "v3", localTestInst},
-		{"http://mycogithub.net/gruntwork-io/script-modules", "v3", netTestInst},
+		{"http://www.github.com/tnn-gruntwork-io/script-modules/", "", wwwGhTestInst},
+		{"https://www.github.com/tnn-gruntwork-io/script-modules/", "", wwwGhTestInst},
+		{"http://github.com/tnn-gruntwork-io/script-modules/", "", ghTestInst},
+		{"http://www.ghe.mycompany.com/tnn-gruntwork-io/script-modules", "v3", wwwGheTestInst},
+		{"https://www.ghe.mycompany.com/tnn-gruntwork-io/script-modules", "v3", wwwGheTestInst},
+		{"http://ghe.mycompany.com/tnn-gruntwork-io/script-modules", "v3", gheTestInst},
+		{"http://www.mycogithub.com/tnn-gruntwork-io/script-modules", "v3", wwwMyCoTestInst},
+		{"https://www.mycogithub.com/tnn-gruntwork-io/script-modules", "v3", wwwMyCoTestInst},
+		{"http://mycogithub.com/tnn-gruntwork-io/script-modules", "v3", myCoTestInst},
+		{"http://mycogithub.local/tnn-gruntwork-io/script-modules", "v3", localTestInst},
+		{"http://mycogithub.net/tnn-gruntwork-io/script-modules", "v3", netTestInst},
 	}
 
 	for _, tc := range cases {
@@ -187,16 +187,16 @@ func TestParseUrlIntoGitHubRepo(t *testing.T) {
 	}{
 		{"https://github.com/brikis98/ping-play", "brikis98", "ping-play", "", ghTestInst},
 		{"http://github.com/brikis98/ping-play", "brikis98", "ping-play", "", ghTestInst},
-		{"https://github.com/gruntwork-io/script-modules", "gruntwork-io", "script-modules", "", ghTestInst},
-		{"http://github.com/gruntwork-io/script-modules", "gruntwork-io", "script-modules", "", ghTestInst},
-		{"http://www.github.com/gruntwork-io/script-modules", "gruntwork-io", "script-modules", "", ghTestInst},
-		{"http://www.github.com/gruntwork-io/script-modules/", "gruntwork-io", "script-modules", "", ghTestInst},
-		{"http://www.github.com/gruntwork-io/script-modules?foo=bar", "gruntwork-io", "script-modules", "token", ghTestInst},
-		{"http://www.github.com/gruntwork-io/script-modules?foo=bar&foo=baz", "gruntwork-io", "script-modules", "token", ghTestInst},
-		{"http://www.ghe.mycompany.com/gruntwork-io/script-modules?foo=bar&foo=baz", "gruntwork-io", "script-modules", "token", gheTestInst},
-		{"https://www.ghe.mycompany.com/gruntwork-io/script-modules?foo=bar&foo=baz", "gruntwork-io", "script-modules", "token", gheTestInst},
-		{"http://ghe.mycompany.com/gruntwork-io/script-modules?foo=bar&foo=baz", "gruntwork-io", "script-modules", "token", gheTestInst},
-		{"http://mycogithub.com/gruntwork-io/script-modules?foo=bar&foo=baz", "gruntwork-io", "script-modules", "token", myCoTestInst},
+		{"https://github.com/tnn-gruntwork-io/script-modules", "tnn-gruntwork-io", "script-modules", "", ghTestInst},
+		{"http://github.com/tnn-gruntwork-io/script-modules", "tnn-gruntwork-io", "script-modules", "", ghTestInst},
+		{"http://www.github.com/tnn-gruntwork-io/script-modules", "tnn-gruntwork-io", "script-modules", "", ghTestInst},
+		{"http://www.github.com/tnn-gruntwork-io/script-modules/", "tnn-gruntwork-io", "script-modules", "", ghTestInst},
+		{"http://www.github.com/tnn-gruntwork-io/script-modules?foo=bar", "tnn-gruntwork-io", "script-modules", "token", ghTestInst},
+		{"http://www.github.com/tnn-gruntwork-io/script-modules?foo=bar&foo=baz", "tnn-gruntwork-io", "script-modules", "token", ghTestInst},
+		{"http://www.ghe.mycompany.com/tnn-gruntwork-io/script-modules?foo=bar&foo=baz", "tnn-gruntwork-io", "script-modules", "token", gheTestInst},
+		{"https://www.ghe.mycompany.com/tnn-gruntwork-io/script-modules?foo=bar&foo=baz", "tnn-gruntwork-io", "script-modules", "token", gheTestInst},
+		{"http://ghe.mycompany.com/tnn-gruntwork-io/script-modules?foo=bar&foo=baz", "tnn-gruntwork-io", "script-modules", "token", gheTestInst},
+		{"http://mycogithub.com/tnn-gruntwork-io/script-modules?foo=bar&foo=baz", "tnn-gruntwork-io", "script-modules", "token", myCoTestInst},
 	}
 
 	for _, tc := range cases {
@@ -250,12 +250,12 @@ func TestGetGitHubReleaseInfo(t *testing.T) {
 
 	expectedFetchTestPrivateRelease := GitHubReleaseApiResponse{
 		Id:   3064041,
-		Url:  "https://api.github.com/repos/gruntwork-io/fetch-test-private/releases/3064041",
+		Url:  "https://api.github.com/repos/tnn-gruntwork-io/fetch-test-private/releases/3064041",
 		Name: "v0.0.2",
 		Assets: []GitHubReleaseAsset{
 			{
 				Id:   1872521,
-				Url:  "https://api.github.com/repos/gruntwork-io/fetch-test-private/releases/assets/1872521",
+				Url:  "https://api.github.com/repos/tnn-gruntwork-io/fetch-test-private/releases/assets/1872521",
 				Name: "test-asset.png",
 			},
 		},
@@ -263,7 +263,7 @@ func TestGetGitHubReleaseInfo(t *testing.T) {
 
 	expectedFetchTestPublicRelease := GitHubReleaseApiResponse{
 		Id:     3065803,
-		Url:    "https://api.github.com/repos/gruntwork-io/fetch-test-public/releases/3065803",
+		Url:    "https://api.github.com/repos/tnn-gruntwork-io/fetch-test-public/releases/3065803",
 		Name:   "v0.0.3",
 		Assets: []GitHubReleaseAsset{},
 	}
@@ -279,8 +279,8 @@ func TestGetGitHubReleaseInfo(t *testing.T) {
 		tag       string
 		expected  GitHubReleaseApiResponse
 	}{
-		{"https://github.com/gruntwork-io/fetch-test-private", token, "v0.0.2", expectedFetchTestPrivateRelease},
-		{"https://github.com/gruntwork-io/fetch-test-public", "", "v0.0.3", expectedFetchTestPublicRelease},
+		{"https://github.com/tnn-gruntwork-io/fetch-test-private", token, "v0.0.2", expectedFetchTestPrivateRelease},
+		{"https://github.com/tnn-gruntwork-io/fetch-test-public", "", "v0.0.3", expectedFetchTestPublicRelease},
 	}
 
 	for _, tc := range cases {
@@ -317,9 +317,9 @@ func TestDownloadGitHubPulicReleaseAsset(t *testing.T) {
 		assetId   int
 		progress  bool
 	}{
-		{"https://github.com/gruntwork-io/fetch-test-private", token, "v0.0.2", 1872521, false},
-		{"https://github.com/gruntwork-io/fetch-test-public", "", "v0.0.2", 1872641, false},
-		{"https://github.com/gruntwork-io/fetch-test-public", "", "v0.0.2", 1872641, true},
+		{"https://github.com/tnn-gruntwork-io/fetch-test-private", token, "v0.0.2", 1872521, false},
+		{"https://github.com/tnn-gruntwork-io/fetch-test-public", "", "v0.0.2", 1872641, false},
+		{"https://github.com/tnn-gruntwork-io/fetch-test-public", "", "v0.0.2", 1872641, true},
 	}
 
 	for _, tc := range cases {
