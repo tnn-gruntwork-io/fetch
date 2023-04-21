@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-const SAMPLE_RELEASE_ASSET_GITHUB_REPO_URL = "https://github.com/gruntwork-io/health-checker"
+const SAMPLE_RELEASE_ASSET_GITHUB_REPO_URL = "https://github.com/tnn-gruntwork-io/health-checker"
 const SAMPLE_RELEASE_ASSET_VERSION = "v0.0.2"
 const SAMPLE_RELEASE_ASSET_NAME = "health-checker_linux_amd64"
 

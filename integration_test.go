@@ -25,10 +25,10 @@ func TestFetchWithBranchOption(t *testing.T) {
 		expectedFile string
 	}{
 		// Test on a public repo whose sole purpose is to be a test fixture for this tool
-		{"branch option with public repo", "https://github.com/gruntwork-io/fetch-test-public", "sample-branch", "/", "foo.txt"},
+		{"branch option with public repo", "https://github.com/tnn-gruntwork-io/fetch-test-public", "sample-branch", "/", "foo.txt"},
 
 		// Private repo equivalent
-		{"branch option with private repo", "https://github.com/gruntwork-io/fetch-test-private", "sample-branch", "/", "bar.txt"},
+		{"branch option with private repo", "https://github.com/tnn-gruntwork-io/fetch-test-private", "sample-branch", "/", "bar.txt"},
 	}
 
 	for _, tc := range cases {
@@ -56,7 +56,7 @@ func TestFetchWithStdoutOption(t *testing.T) {
 	tmpDownloadPath, err := ioutil.TempDir("", "fetch-stdout-test")
 	require.NoError(t, err)
 
-	repoUrl := "https://github.com/gruntwork-io/fetch-test-public"
+	repoUrl := "https://github.com/tnn-gruntwork-io/fetch-test-public"
 	releaseTag := "v0.0.4"
 	releaseAsset := "hello+world.txt"
 
@@ -99,7 +99,7 @@ func runFetchCommandWithOutput(t *testing.T, command string) (string, string, er
 	}
 
 	// log the buffers for easier debugging. this is inspired by the integration tests in Terragrunt.
-	// For more information, see: https://github.com/gruntwork-io/terragrunt/blob/master/test/integration_test.go.
+	// For more information, see: https://github.com/tnn-gruntwork-io/terragrunt/blob/master/test/integration_test.go.
 	logBufferContentsLineByLine(t, stdout, "stdout")
 	logBufferContentsLineByLine(t, stderr, "stderr")
 	return stdout.String(), stderr.String(), nil
