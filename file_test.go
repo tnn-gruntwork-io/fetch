@@ -315,7 +315,7 @@ func TestDownloadZipFileWithBadRepoValues(t *testing.T) {
 		gitTag      string
 		githubToken string
 	}{
-		{publicGitHub, "https://github.com/gruntwork-io/fetch-test-public/archive/does-not-exist.zip", "MyNameIsWhat", "x.y.z", ""},
+		{publicGitHub, "https://github.com/tnn-gruntwork-io/fetch-test-public/archive/does-not-exist.zip", "MyNameIsWhat", "x.y.z", ""},
 	}
 
 	for _, tc := range cases {
