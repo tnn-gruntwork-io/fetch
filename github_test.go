@@ -25,10 +25,10 @@ func TestGetListOfReleasesFromGitHubRepo(t *testing.T) {
 		testInst         GitHubInstance
 	}{
 		// Test on a public repo whose sole purpose is to be a test fixture for this tool
-		{"https://github.com/gruntwork-io/fetch-test-public", "v0.0.1", "v0.0.4", 4, "", testInst},
+		{"https://github.com/tnn-gruntwork-io/fetch-test-public", "v0.0.1", "v0.0.4", 4, "", testInst},
 
 		// Private repo equivalent
-		{"https://github.com/gruntwork-io/fetch-test-private", "v0.0.2", "v0.0.2", 1, os.Getenv("GITHUB_OAUTH_TOKEN"), testInst},
+		{"https://github.com/tnn-gruntwork-io/fetch-test-private", "v0.0.2", "v0.0.2", 1, os.Getenv("GITHUB_OAUTH_TOKEN"), testInst},
 	}
 
 	for _, tc := range cases {
@@ -279,8 +279,8 @@ func TestGetGitHubReleaseInfo(t *testing.T) {
 		tag       string
 		expected  GitHubReleaseApiResponse
 	}{
-		{"https://github.com/gruntwork-io/fetch-test-private", token, "v0.0.2", expectedFetchTestPrivateRelease},
-		{"https://github.com/gruntwork-io/fetch-test-public", "", "v0.0.3", expectedFetchTestPublicRelease},
+		{"https://github.com/tnn-gruntwork-io/fetch-test-private", token, "v0.0.2", expectedFetchTestPrivateRelease},
+		{"https://github.com/tnn-gruntwork-io/fetch-test-public", "", "v0.0.3", expectedFetchTestPublicRelease},
 	}
 
 	for _, tc := range cases {
@@ -317,9 +317,9 @@ func TestDownloadGitHubPulicReleaseAsset(t *testing.T) {
 		assetId   int
 		progress  bool
 	}{
-		{"https://github.com/gruntwork-io/fetch-test-private", token, "v0.0.2", 1872521, false},
-		{"https://github.com/gruntwork-io/fetch-test-public", "", "v0.0.2", 1872641, false},
-		{"https://github.com/gruntwork-io/fetch-test-public", "", "v0.0.2", 1872641, true},
+		{"https://github.com/tnn-gruntwork-io/fetch-test-private", token, "v0.0.2", 1872521, false},
+		{"https://github.com/tnn-gruntwork-io/fetch-test-public", "", "v0.0.2", 1872641, false},
+		{"https://github.com/tnn-gruntwork-io/fetch-test-public", "", "v0.0.2", 1872641, true},
 	}
 
 	for _, tc := range cases {
