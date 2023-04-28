@@ -71,7 +71,7 @@ func CreateFetchCli(version string, writer io.Writer, errwriter io.Writer) *cli.
 	app := cli.NewApp()
 	app.Name = "fetch"
 	app.Usage = "fetch makes it easy to download files, folders, and release assets from a specific git commit, branch, or tag of public and private GitHub repos."
-	app.UsageText = "fetch [global options] <local-download-path>\n   (See https://github.com/tnn-gruntwork-io/fetch for examples, argument definitions, and additional docs.)"
+	app.UsageText = "fetch [global options] <local-download-path>\n   (See https://github.com/gruntwork-io/fetch for examples, argument definitions, and additional docs.)"
 	app.Author = "Gruntwork <www.gruntwork.io>"
 	app.Version = version
 	app.Writer = writer
@@ -96,7 +96,7 @@ func CreateFetchCli(version string, writer io.Writer, errwriter io.Writer) *cli.
 		},
 		cli.StringFlag{
 			Name:  optionTag,
-			Usage: "The specific git tag to download, expressed with Version Constraint Operators.\n\tIf left blank, fetch will download the latest git tag.\n\tSee https://github.com/tnn-gruntwork-io/fetch#version-constraint-operators for examples.",
+			Usage: "The specific git tag to download, expressed with Version Constraint Operators.\n\tIf left blank, fetch will download the latest git tag.\n\tSee https://github.com/gruntwork-io/fetch#version-constraint-operators for examples.",
 		},
 		cli.StringFlag{
 			Name:   optionGithubToken,
@@ -507,7 +507,7 @@ func getErrorMessage(errorCode int, errorDetails string) string {
 	case invalidTagConstraintExpression:
 		return fmt.Sprintf(`
 The --tag value you entered is not a valid constraint expression.
-See https://github.com/tnn-gruntwork-io/fetch#version-constraint-operators for examples.
+See https://github.com/gruntwork-io/fetch#version-constraint-operators for examples.
 
 Underlying error message:
 %s

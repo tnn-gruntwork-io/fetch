@@ -51,7 +51,7 @@ func TestDownloadReleaseAssetsWithRegexCharacters(t *testing.T) {
 		ApiUrl:  "api.github.com",
 	}
 
-	const githubRepoUrl = "https://github.com/tnn-gruntwork-io/fetch-test-public"
+	const githubRepoUrl = "https://github.com/gruntwork-io/fetch-test-public"
 	const releaseAsset = "hello+world.txt"
 	const assetVersion = "v0.0.4"
 
